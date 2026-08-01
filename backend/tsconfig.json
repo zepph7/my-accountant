@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // ES2022 is fully supported by every Node LTS this app runs on, and it is
+    // what brings `Intl.supportedValuesOf` — used to validate user timezones
+    // before they reach `AT TIME ZONE` in the reporting queries.
+    "target": "ES2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
