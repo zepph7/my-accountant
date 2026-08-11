@@ -13,6 +13,7 @@ export type AuditAction = 'INSERT' | 'UPDATE' | 'DELETE';
 export interface UserRow {
   id: string;
   email: string;
+  phone: string | null;
   first_name: string;
   last_name: string;
   password_hash: string | null;
@@ -30,6 +31,7 @@ export interface UserRow {
 export interface PublicUser {
   id: string;
   email: string;
+  phone: string | null;
   firstName: string;
   lastName: string;
   avatarUrl: string | null;

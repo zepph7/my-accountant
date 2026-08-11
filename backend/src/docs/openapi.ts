@@ -232,7 +232,31 @@ export const openApiDocument = {
       post: { tags: ['Auth'], summary: 'Revoke the current refresh token (idempotent)', responses: { 204: { description: 'Logged out' } } },
     },
     '/auth/me': {
-      get: { tags: ['Auth'], summary: 'The authenticated user', responses: { 200: okResponse('Current user'), 401: errors[401] } },
+      get: {
+        tags: ['Auth'],
+        summary: 'The authenticated user',
+        description: 'Read fresh from the database, so it includes phone and name — not just the token claims.',
+        responses: { 200: okResponse('Current user'), 401: errors[401] },
+      },
+      patch: {
+        tags: ['Auth'],
+        summary: 'Update your own profile',
+        description:
+          'Partial update; at least one field required. `email` is not updatable here — it is the key ' +
+          'Google sign-in matches on, so changing it needs a verification flow rather than a PATCH. ' +
+          'A changed `timezone` only affects reports once the access token is refreshed, because the ' +
+          'zone is a JWT claim and authentication does not query the database per request.',
+        requestBody: {
+          required: true,
+          content: { 'application/json': { schema: { $ref: '#/components/schemas/UpdateProfileInput' } } },
+        },
+        responses: {
+          200: okResponse('Updated user'),
+          400: errors[400],
+          401: errors[401],
+          409: { description: 'That phone number belongs to another account.' },
+        },
+      },
     },
     '/auth/google': {
       get: { tags: ['Auth'], summary: 'Begin the Google OAuth 2.0 handshake', security: [], responses: { 302: { description: 'Redirect to Google' } } },
@@ -444,7 +468,12 @@ export const openApiDocument = {
       },
       RegisterInput: {
         type: 'object',
-        required: ['email', 'password', 'firstName', 'lastName'],
+        required: ['email', 'phone', 'password', 'firstName', 'lastName'],
+        description:
+          'Both an email and a phone number are required. The email is what lets a later ' +
+          'Google sign-in link to this account instead of creating a duplicate; the phone ' +
+          'is the key for phone-based features. Accounts created via Google OAuth have no ' +
+          'phone — that path does not go through this endpoint.',
         properties: {
           email: { type: 'string', format: 'email' },
           password: {
@@ -456,12 +485,38 @@ export const openApiDocument = {
           firstName: { type: 'string' },
           lastName: { type: 'string' },
           timezone: { type: 'string', example: 'Africa/Nairobi', description: 'IANA name; validated against the tz database.' },
+          phone: {
+            type: 'string',
+            example: '+254712345678',
+            description:
+              'Required and unique. Must be E.164 — separators are stripped, but local ' +
+              'formats like 0712345678 are rejected rather than guessed at, since ' +
+              'inferring a country code can silently claim someone else’s number.',
+          },
         },
       },
       LoginInput: {
         type: 'object',
-        required: ['email', 'password'],
-        properties: { email: { type: 'string', format: 'email' }, password: { type: 'string' } },
+        required: ['password'],
+        description:
+          'Supply exactly one of `email` or `phone`, plus the password. Sending both is a 400.',
+        properties: {
+          email: { type: 'string', format: 'email' },
+          phone: { type: 'string', example: '+254712345678' },
+          password: { type: 'string' },
+        },
+        oneOf: [{ required: ['email'] }, { required: ['phone'] }],
+      },
+      UpdateProfileInput: {
+        type: 'object',
+        minProperties: 1,
+        description: 'At least one field. Omitted fields are left unchanged.',
+        properties: {
+          phone: { type: 'string', example: '+254712345678', description: 'E.164; must not belong to another account.' },
+          firstName: { type: 'string', maxLength: 100 },
+          lastName: { type: 'string', maxLength: 100 },
+          timezone: { type: 'string', example: 'Africa/Nairobi' },
+        },
       },
       RefreshInput: {
         type: 'object',

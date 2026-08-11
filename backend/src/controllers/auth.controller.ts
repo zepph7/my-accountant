@@ -66,7 +66,30 @@ export const logout = async (req: Request, res: Response) => {
   return ok(res, null, 'Signed out');
 };
 
-export const me = async (req: Request, res: Response) => ok(res, req.user);
+/**
+ * Reads from the database rather than echoing the token.
+ *
+ * The JWT carries only what request scoping needs — id, email, role, timezone —
+ * so returning it would omit the phone and name the profile screen exists to
+ * show, and would serve stale values for up to the token's lifetime.
+ */
+export const me = async (req: Request, res: Response) => {
+  if (!req.user) throw ApiError.unauthorized();
+  return ok(res, await authService.getProfile(req.user.id));
+};
+
+export const updateMe = async (req: Request, res: Response) => {
+  if (!req.user) throw ApiError.unauthorized();
+  const { user, timezoneChanged } = await authService.updateProfile(req.user.id, req.body);
+
+  return ok(
+    res,
+    user,
+    timezoneChanged
+      ? 'Profile updated. Refresh your access token for the new timezone to apply to reports.'
+      : 'Profile updated'
+  );
+};
 
 const OAUTH_STATE_COOKIE = 'oauth_state';
 

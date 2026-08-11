@@ -31,8 +31,12 @@ export const authLimiter = rateLimit({
   // attacker rotate source addresses and never hit the limit. The helper masks
   // IPv6 to its subnet while leaving IPv4 untouched.
   keyGenerator: (req) => {
+    // Either identifier may be the one under attack, so whichever was sent is
+    // what the budget is keyed on. Keying on email alone would leave phone
+    // logins sharing one bucket per IP — and effectively unthrottled per account.
     const email = typeof req.body?.email === 'string' ? req.body.email.toLowerCase() : '';
-    return `${ipKeyGenerator(req.ip ?? '')}:${email}`;
+    const phone = typeof req.body?.phone === 'string' ? req.body.phone : '';
+    return `${ipKeyGenerator(req.ip ?? '')}:${email || phone}`;
   },
   handler,
 });

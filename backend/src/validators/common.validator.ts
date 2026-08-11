@@ -54,6 +54,27 @@ export const percentage = z
   .refine((v) => /^\d{1,3}(\.\d{1,2})?$/.test(v), 'Percentage must have at most 2 decimals')
   .refine((v) => Number(v) >= 0 && Number(v) <= 100, 'Percentage must be between 0 and 100');
 
+/**
+ * A phone number, normalised to E.164 before validation.
+ *
+ * Spaces, dashes, dots and parentheses are stripped because people type them
+ * and none of them carry meaning. What is deliberately NOT done is guessing a
+ * country code for a local-format number like "0712345678" — that requires
+ * knowing where the user is, and a wrong guess silently registers someone
+ * else's number as theirs. Better to reject it and say what is wanted.
+ */
+export const phone = z
+  // The custom message covers the missing-value case too. Where phone is
+  // optional, `.optional()` short-circuits before this schema runs, so the
+  // "required" wording never leaks into those endpoints.
+  .string({ error: 'A phone number is required, in international format e.g. +254712345678' })
+  .trim()
+  .transform((v) => v.replaceAll(/[\s\-().]/g, ''))
+  .refine(
+    (v) => /^\+[1-9]\d{1,14}$/.test(v),
+    'Phone must be in international format, e.g. +254712345678'
+  );
+
 export const walletEnum = z.enum(['cash', 'account', 'mpesa']);
 
 /**

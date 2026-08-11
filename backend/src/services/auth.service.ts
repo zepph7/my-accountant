@@ -32,6 +32,7 @@ const DEFAULT_DISTRIBUTION = [
 export const toPublicUser = (row: UserRow): PublicUser => ({
   id: row.id,
   email: row.email,
+  phone: row.phone,
   firstName: row.first_name,
   lastName: row.last_name,
   avatarUrl: row.avatar_url,
@@ -87,6 +88,7 @@ const issueTokens = async (
 export const register = async (
   input: {
     email: string;
+    phone: string;
     password: string;
     firstName: string;
     lastName: string;
@@ -94,9 +96,18 @@ export const register = async (
   },
   ctx: IssueContext
 ) => {
-  const existing = await users.findByEmail(input.email);
-  if (existing) {
+  /**
+   * Both identifiers are checked up front so the caller gets a message naming
+   * the field, rather than the generic 409 a UNIQUE violation produces. The
+   * database constraints remain the authority — these checks race, and losing
+   * that race is correctly still a 409.
+   */
+  if (await users.findByEmail(input.email)) {
     throw ApiError.conflict('An account with that email already exists');
+  }
+
+  if (await users.findByPhone(input.phone)) {
+    throw ApiError.conflict('An account with that phone number already exists');
   }
 
   const passwordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
@@ -105,6 +116,7 @@ export const register = async (
     const user = await users.create(
       {
         email: input.email,
+        phone: input.phone,
         firstName: input.firstName,
         lastName: input.lastName,
         passwordHash,
@@ -120,25 +132,73 @@ export const register = async (
   });
 };
 
+/**
+ * Signs in with either an email or a phone number.
+ *
+ * The validator guarantees exactly one is present. Both paths converge on the
+ * same comparison so that neither identifier leaks more than the other: the
+ * error text and the work done are identical whether the account is unknown,
+ * has no password (Google-only), or the password is simply wrong.
+ */
 export const login = async (
-  input: { email: string; password: string },
+  input: { email?: string; phone?: string; password: string },
   ctx: IssueContext
 ) => {
-  const user = await users.findByEmail(input.email);
+  const user = input.phone
+    ? await users.findByPhone(input.phone)
+    : input.email
+      ? await users.findByEmail(input.email)
+      : null;
 
-  // Identical error and comparable timing whether the email is unknown or the
-  // password is wrong — otherwise the endpoint becomes an account enumerator.
+  // Identical error and comparable timing whether the identifier is unknown or
+  // the password is wrong — otherwise the endpoint becomes an account enumerator.
   if (!user || !user.password_hash) {
     await bcrypt.compare(input.password, '$2b$12$invalidinvalidinvalidinvalidinvalidinvalidinvalidinv');
-    throw ApiError.unauthorized('Invalid email or password');
+    throw ApiError.unauthorized('Invalid credentials');
   }
 
   const valid = await bcrypt.compare(input.password, user.password_hash);
   if (!valid) {
-    throw ApiError.unauthorized('Invalid email or password');
+    throw ApiError.unauthorized('Invalid credentials');
   }
 
   return issueTokens(user, ctx);
+};
+
+/** The signed-in user's own profile, read fresh rather than off the token. */
+export const getProfile = async (userId: string) => {
+  const user = await users.findById(userId);
+  if (!user) throw ApiError.unauthorized('Account no longer exists');
+  return toPublicUser(user);
+};
+
+/**
+ * Updates the signed-in user's profile.
+ *
+ * The phone uniqueness check excludes the caller's own row — otherwise
+ * re-submitting an unchanged number would collide with itself and report the
+ * user's own phone as already taken.
+ *
+ * Changing `timezone` does NOT take effect for reports until the access token
+ * is refreshed: the zone is a JWT claim, and `authenticate` deliberately does
+ * not hit the database on every request. The caller is told so in the response
+ * rather than left to wonder why yesterday's buckets did not move.
+ */
+export const updateProfile = async (userId: string, input: users.UpdateProfileInput) => {
+  if (input.phone) {
+    const existing = await users.findByPhone(input.phone);
+    if (existing && existing.id !== userId) {
+      throw ApiError.conflict('An account with that phone number already exists');
+    }
+  }
+
+  const user = await users.updateProfile(userId, input);
+  if (!user) throw ApiError.unauthorized('Account no longer exists');
+
+  return {
+    user: toPublicUser(user),
+    timezoneChanged: Boolean(input.timezone),
+  };
 };
 
 /**

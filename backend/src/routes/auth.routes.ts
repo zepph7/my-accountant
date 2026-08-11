@@ -3,7 +3,12 @@ import { asyncHandler } from '../utils/asyncHandler';
 import { validate } from '../middlewares/validate.middleware';
 import { authenticate } from '../middlewares/auth.middleware';
 import { authLimiter } from '../middlewares/rateLimiter.middleware';
-import { loginSchema, refreshSchema, registerSchema } from '../validators/auth.validator';
+import {
+  loginSchema,
+  refreshSchema,
+  registerSchema,
+  updateProfileSchema,
+} from '../validators/auth.validator';
 import * as controller from '../controllers/auth.controller';
 
 const router = Router();
@@ -24,6 +29,15 @@ router.post('/refresh', validate({ body: refreshSchema }), asyncHandler(controll
 router.post('/logout', validate({ body: refreshSchema }), asyncHandler(controller.logout));
 
 router.get('/me', authenticate, asyncHandler(controller.me));
+
+// The only write path to a user row outside registration and Google linking —
+// it is how an existing account gains a phone number.
+router.patch(
+  '/me',
+  authenticate,
+  validate({ body: updateProfileSchema }),
+  asyncHandler(controller.updateMe)
+);
 
 router.get('/google', asyncHandler(controller.googleRedirect));
 router.get('/google/callback', asyncHandler(controller.googleCallback));
