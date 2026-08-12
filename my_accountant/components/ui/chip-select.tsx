@@ -1,4 +1,5 @@
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { Pressable } from '@/components/ui/pressable';
 
 import { Type } from '@/constants/theme';
 import { useThemeColors } from '@/hooks/use-theme-colors';

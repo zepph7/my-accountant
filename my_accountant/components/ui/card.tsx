@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Pressable } from '@/components/ui/pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { RADIUS, Type } from '@/constants/theme';

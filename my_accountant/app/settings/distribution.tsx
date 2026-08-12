@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
-import { Alert, Pressable, Text, View } from 'react-native';
+import { Alert, Text, View } from 'react-native';
+import { Pressable } from '@/components/ui/pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { AuthNotice } from '@/components/auth/auth-notice';

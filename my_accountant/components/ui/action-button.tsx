@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
+import { Pressable } from '@/components/ui/pressable';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import { BUTTON_HEIGHT, RADIUS, Type } from '@/constants/theme';

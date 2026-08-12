@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
-import { Linking, Pressable, Text, TextInput, View } from 'react-native';
+import { Linking, Text, TextInput, View } from 'react-native';
+import { Pressable } from '@/components/ui/pressable';
 import { useRouter } from 'expo-router';
 
 import { AuthShell } from '@/components/auth/auth-shell';
@@ -8,36 +9,37 @@ import { ActionButton } from '@/components/ui/action-button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { GoogleMark } from '@/components/ui/google-mark';
 import { OrDivider } from '@/components/ui/or-divider';
-import { SegmentedTabs, type TabOption } from '@/components/ui/segmented-tabs';
 import { TextField } from '@/components/ui/text-field';
 import { Type } from '@/constants/theme';
 import { useThemeColors } from '@/hooks/use-theme-colors';
 import { useAuth } from '@/providers/auth-provider';
 import { ApiError } from '@/lib/api';
-import { normalizePhone, validateEmail, validatePhone, type FieldErrors } from '@/lib/auth-validation';
-
-type Method = 'email' | 'phone';
-
-const METHODS: readonly TabOption<Method>[] = [
-  { value: 'email', label: 'Email' },
-  { value: 'phone', label: 'Phone' },
-];
+import {
+  identifierCredential,
+  identifierKind,
+  validateIdentifier,
+  type FieldErrors,
+} from '@/lib/auth-validation';
 
 /**
  * Sign in.
  *
- * The method is chosen with a tab rather than inferred from what was typed. The
- * API takes an email or a phone number and refuses both together, so the client
- * has to pick one — and picking it up front is what lets the field show a
- * numeric keypad to someone entering a phone number and offer the right
- * autofill, neither of which a combined field can do.
+ * One field takes either identifier. The API still needs to be told which it
+ * is — it accepts an email or a phone and refuses both — so the kind is
+ * inferred from the first character: a leading `+` or digit can only be a phone
+ * number. That keeps the decision off the user, who knows what they typed and
+ * should not have to tell the form twice.
+ *
+ * The cost of dropping the tabs is the keyboard: a combined field cannot open a
+ * numeric keypad, because it has to accept letters too. `email-address` is the
+ * closest fit — it keeps `@` and `.` reachable and, unlike `default`, does not
+ * autocapitalise.
  */
 export default function LoginScreen() {
   const router = useRouter();
   const { colors } = useThemeColors();
   const { signInWithPassword, signInWithGoogle } = useAuth();
 
-  const [method, setMethod] = useState<Method>('email');
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [revealed, setRevealed] = useState(false);
@@ -52,20 +54,11 @@ export default function LoginScreen() {
   const clear = (field: string) =>
     setErrors((current) => (current[field] ? { ...current, [field]: '' } : current));
 
-  /** Switching method clears the field, so an email is never sent as a phone. */
-  const changeMethod = (next: Method) => {
-    setMethod(next);
-    setIdentifier('');
-    setErrors({});
-    setNotice(null);
-  };
-
   const submit = async () => {
     if (pending) return;
 
     const next: FieldErrors = {};
-    const identifierError =
-      method === 'email' ? validateEmail(identifier) : validatePhone(identifier);
+    const identifierError = validateIdentifier(identifier);
     if (identifierError) next.identifier = identifierError;
     // No strength rules on sign-in. The account's password was accepted when it
     // was set, and re-judging it here would lock out anyone whose password
@@ -78,12 +71,7 @@ export default function LoginScreen() {
 
     setPending('credentials');
     try {
-      await signInWithPassword(
-        method === 'email'
-          ? { email: identifier.trim(), password }
-          : { phone: normalizePhone(identifier), password },
-        remember
-      );
+      await signInWithPassword({ ...identifierCredential(identifier), password }, remember);
       router.replace('/(tabs)');
     } catch (error) {
       if (error instanceof ApiError) {
@@ -123,47 +111,30 @@ export default function LoginScreen() {
 
   return (
     <AuthShell title="Welcome back" subtitle="Sign in to continue to your account">
-      <View className="mb-6">
-        <SegmentedTabs options={METHODS} value={method} onChange={changeMethod} />
-      </View>
-
-      {method === 'email' ? (
-        <TextField
-          label="Email address"
-          icon="mail-outline"
-          value={identifier}
-          onChangeText={(v) => {
-            setIdentifier(v);
-            clear('identifier');
-          }}
-          placeholder="you@example.com"
-          keyboardType="email-address"
-          autoCapitalize="none"
-          autoCorrect={false}
-          autoComplete="email"
-          returnKeyType="next"
-          onSubmitEditing={() => passwordRef.current?.focus()}
-          editable={!pending}
-          error={errors.identifier}
-        />
-      ) : (
-        <TextField
-          label="Phone number"
-          icon="call-outline"
-          value={identifier}
-          onChangeText={(v) => {
-            setIdentifier(v);
-            clear('identifier');
-          }}
-          placeholder="+254 712 345 678"
-          keyboardType="phone-pad"
-          autoComplete="tel"
-          returnKeyType="next"
-          onSubmitEditing={() => passwordRef.current?.focus()}
-          editable={!pending}
-          error={errors.identifier}
-        />
-      )}
+      <TextField
+        label="Email or phone number"
+        // The icon follows what is being typed, so the field confirms how the
+        // input was read before the user commits to submitting it.
+        icon={identifierKind(identifier) === 'phone' ? 'call-outline' : 'mail-outline'}
+        value={identifier}
+        onChangeText={(v) => {
+          setIdentifier(v);
+          clear('identifier');
+        }}
+        placeholder="you@example.com or +254712345678"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        autoCorrect={false}
+        // `username` rather than `email`: the field accepts either, and telling
+        // the platform it is an email suppresses phone-number suggestions.
+        autoComplete="username"
+        textContentType="username"
+        returnKeyType="next"
+        onSubmitEditing={() => passwordRef.current?.focus()}
+        editable={!pending}
+        error={errors.identifier}
+        hint="Sign in with whichever you registered with."
+      />
 
       <TextField
         ref={passwordRef}

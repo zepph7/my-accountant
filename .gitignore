@@ -35,5 +35,5 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-
+supabase/
 prompt.md

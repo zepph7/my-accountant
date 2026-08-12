@@ -40,6 +40,32 @@ export const validatePhone = (value: string): string | undefined => {
 };
 
 /** Matches the server: 10–72 characters, with lower case, upper case and a digit. */
+/**
+ * Decides whether a sign-in identifier is an email or a phone number.
+ *
+ * The API takes one or the other and rejects both together, so the client has
+ * to commit before it sends. The test is the leading character rather than a
+ * full match: anything starting with `+` or a digit can only be an attempt at a
+ * phone number, so a half-typed one gets the phone error explaining the country
+ * code, not a confusing complaint about a missing `@`.
+ */
+export const identifierKind = (value: string): 'email' | 'phone' => {
+  const trimmed = value.trim();
+  return /^[+\d]/.test(trimmed) ? 'phone' : 'email';
+};
+
+/** Validates a combined identifier, reporting against whichever kind it looks like. */
+export const validateIdentifier = (value: string): string | undefined => {
+  if (!value.trim()) return 'Enter your email address or phone number.';
+  return identifierKind(value) === 'phone' ? validatePhone(value) : validateEmail(value);
+};
+
+/** The credential shape the API expects, keyed by what the user actually typed. */
+export const identifierCredential = (value: string): { email: string } | { phone: string } =>
+  identifierKind(value) === 'phone'
+    ? { phone: normalizePhone(value) }
+    : { email: value.trim() };
+
 export const validatePassword = (value: string): string | undefined => {
   if (!value) return 'Enter a password.';
   if (value.length < 10) return 'Use at least 10 characters.';
