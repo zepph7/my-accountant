@@ -101,6 +101,10 @@ void main() {
 
   test('does not attach a token or attempt refresh for anonymous requests', () async {
     final sessionStore = SecureSessionStore(InMemoryTokenStorage());
+    await sessionStore.save(
+      const Session(accessToken: 'stale', refreshToken: 'refresh-1'),
+      remember: true,
+    );
     var refreshCalls = 0;
 
     final dio = Dio(BaseOptions(baseUrl: 'https://example.test'));
