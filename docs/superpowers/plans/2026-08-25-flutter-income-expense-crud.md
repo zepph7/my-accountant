@@ -1783,7 +1783,16 @@ abstract class PagedListNotifier<T> extends Notifier<PagedListState<T>> {
 
   @override
   PagedListState<T> build() {
-    Future(() => _load(1, _LoadMode.initial));
+    // Reserve the in-flight slot synchronously, before build() returns —
+    // Future(...) below runs via Timer.run (a macrotask), so without this,
+    // any synchronous caller of loadMore()/refresh()/reload() right after
+    // container.read(provider) would see _inFlight still false, become the
+    // *first* real fetch itself, resolve, and reset _inFlight to false
+    // before the deferred initial call ever runs — which would then also
+    // pass the guard and fire a second, duplicate fetch. Reserving the slot
+    // here closes that window entirely.
+    _inFlight = true;
+    Future(() => _load(1, _LoadMode.initial, reserved: true));
     return PagedListState.initial<T>();
   }
 
@@ -1792,12 +1801,15 @@ abstract class PagedListNotifier<T> extends Notifier<PagedListState<T>> {
   /// on where filter state lives).
   Future<Page<T>> fetchPage(int page);
 
-  Future<void> _load(int target, _LoadMode mode) async {
+  Future<void> _load(int target, _LoadMode mode, {bool reserved = false}) async {
     // Guards against a scroll listener or a rapid double-tap firing loadMore
     // repeatedly while a page is already in flight, which would skip pages
-    // or duplicate one.
-    if (_inFlight) return;
-    _inFlight = true;
+    // or duplicate one. `reserved` lets build()'s deferred initial call
+    // skip re-checking the guard it already claimed synchronously above.
+    if (!reserved) {
+      if (_inFlight) return;
+      _inFlight = true;
+    }
 
     state = state.copyWith(
       loading: mode == _LoadMode.initial ? true : null,
