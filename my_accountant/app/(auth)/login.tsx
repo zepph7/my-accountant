@@ -121,7 +121,7 @@ export default function LoginScreen() {
           setIdentifier(v);
           clear('identifier');
         }}
-        placeholder="you@example.com or +254712345678"
+        placeholder="you@example.com or +255712345678"
         keyboardType="email-address"
         autoCapitalize="none"
         autoCorrect={false}
