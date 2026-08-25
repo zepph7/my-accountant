@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/screens/login_screen.dart';
+import '../../features/auth/screens/profile_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
@@ -32,7 +33,9 @@ class _TabShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final location = GoRouterState.of(context).matchedLocation;
-    final index = _tabPaths.indexWhere((tab) => location == tab);
+    final index = _tabPaths.indexWhere(
+      (tab) => location == tab || (tab == '/settings' && location.startsWith('/settings/')),
+    );
 
     return Scaffold(
       body: child,
@@ -88,7 +91,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: 'profile',
-                builder: (context, state) => const ComingSoonScreen('Profile'),
+                builder: (context, state) => const ProfileScreen(),
               ),
             ],
           ),
