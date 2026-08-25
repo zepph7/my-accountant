@@ -39,7 +39,10 @@ class AuthInterceptor extends Interceptor {
   void onError(DioException err, ErrorInterceptorHandler handler) async {
     final session = sessionStore.current;
 
-    if (err.response?.statusCode != 401 || _isAnonymous(err.requestOptions) || session == null) {
+    if (err.response?.statusCode != 401 ||
+        _isAnonymous(err.requestOptions) ||
+        err.requestOptions.extra['__replayed'] == true ||
+        session == null) {
       handler.next(err);
       return;
     }
@@ -55,7 +58,9 @@ class AuthInterceptor extends Interceptor {
 
     try {
       final retried = await retry(
-        err.requestOptions..headers['Authorization'] = 'Bearer ${renewed.accessToken}',
+        err.requestOptions
+          ..extra['__replayed'] = true
+          ..headers['Authorization'] = 'Bearer ${renewed.accessToken}',
       );
       handler.resolve(retried);
     } on DioException catch (retryErr) {

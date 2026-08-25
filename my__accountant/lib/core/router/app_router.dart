@@ -60,19 +60,26 @@ final routerProvider = Provider<GoRouter>((ref) {
   ref.onDispose(refreshNotifier.dispose);
 
   return GoRouter(
-    initialLocation: '/login',
+    initialLocation: '/splash',
     refreshListenable: refreshNotifier,
     redirect: (context, state) {
       final auth = ref.read(authProvider);
       final onAuthRoute = state.matchedLocation == '/login' || state.matchedLocation == '/register';
+      final onSplash = state.matchedLocation == '/splash';
 
-      if (auth.status == AuthStatus.loading) return null;
+      if (auth.status == AuthStatus.loading) return onSplash ? null : '/splash';
       if (auth.status == AuthStatus.unauthenticated) {
         return onAuthRoute ? null : '/login';
       }
-      return onAuthRoute ? '/' : null;
+      return (onAuthRoute || onSplash) ? '/' : null;
     },
     routes: [
+      GoRoute(
+        path: '/splash',
+        builder: (context, state) => const Scaffold(
+          body: Center(child: CircularProgressIndicator()),
+        ),
+      ),
       GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
       GoRoute(path: '/register', builder: (context, state) => const RegisterScreen()),
       ShellRoute(

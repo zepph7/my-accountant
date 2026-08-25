@@ -68,6 +68,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     } on ApiException catch (e) {
       if (!mounted) return;
       setState(() => _formError = e.message);
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _formError = 'Something went wrong. Try again.');
     } finally {
       if (mounted) setState(() => _submitting = false);
     }

@@ -58,4 +58,27 @@ void main() {
     );
     expect(find.byType(NavigationBar), findsOneWidget);
   });
+
+  testWidgets('loading shows the splash screen, not the login form', (tester) async {
+    final container = ProviderContainer(
+      overrides: [
+        authProvider.overrideWith(() => _FixedAuthNotifier(const AuthState(status: AuthStatus.loading))),
+      ],
+    );
+    addTearDown(container.dispose);
+
+    await tester.pumpWidget(
+      UncontrolledProviderScope(
+        container: container,
+        child: MaterialApp.router(routerConfig: container.read(routerProvider)),
+      ),
+    );
+    // Don't pumpAndSettle: CircularProgressIndicator animates indefinitely.
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.text('My Accountant'), findsNothing);
+    expect(find.byType(NavigationBar), findsNothing);
+  });
 }

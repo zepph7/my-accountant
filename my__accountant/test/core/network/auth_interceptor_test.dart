@@ -99,6 +99,46 @@ void main() {
     expect(sessionStore.current, isNull);
   });
 
+  test('signs out instead of looping when the replayed request also 401s', () async {
+    final sessionStore = SecureSessionStore(InMemoryTokenStorage());
+    await sessionStore.save(
+      const Session(accessToken: 'stale', refreshToken: 'refresh-1'),
+      remember: true,
+    );
+
+    var refreshCalls = 0;
+    bool signedOutCalled = false;
+
+    final dio = Dio(BaseOptions(baseUrl: 'https://example.test'));
+    dio.httpClientAdapter = FakeHttpClientAdapter((options) async {
+      if (options.uri.path == '/api/protected') {
+        // Every attempt 401s — e.g. a disabled account, not an expired token.
+        return _jsonBody({'success': false, 'message': 'forbidden'}, 401);
+      }
+      throw StateError('unexpected path ${options.uri.path}');
+    });
+
+    Future<Session?> performRefresh(String refreshToken) async {
+      refreshCalls++;
+      final session = const Session(accessToken: 'fresh', refreshToken: 'refresh-2');
+      await sessionStore.updateStored(session);
+      return session;
+    }
+
+    dio.interceptors.add(AuthInterceptor(
+      sessionStore: sessionStore,
+      performRefresh: performRefresh,
+      retry: dio.fetch,
+      onSignedOut: () => signedOutCalled = true,
+    ));
+
+    await expectLater(dio.get<dynamic>('/api/protected'), throwsA(isA<DioException>()));
+
+    expect(refreshCalls, 1, reason: 'refresh must run exactly once, not loop');
+    expect(signedOutCalled, isTrue);
+    expect(sessionStore.current, isNull);
+  });
+
   test('does not attach a token or attempt refresh for anonymous requests', () async {
     final sessionStore = SecureSessionStore(InMemoryTokenStorage());
     await sessionStore.save(
