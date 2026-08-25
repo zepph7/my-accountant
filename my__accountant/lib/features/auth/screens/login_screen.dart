@@ -45,11 +45,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             remember: _remember,
           );
     } on ApiException catch (e) {
+      if (!mounted) return;
       setState(() {
         _formError = e.fieldErrors.isEmpty ? e.message : null;
         _fieldErrors = e.fieldErrors;
       });
     } catch (_) {
+      if (!mounted) return;
       setState(() => _formError = 'Something went wrong. Try again.');
     } finally {
       if (mounted) setState(() => _submitting = false);
@@ -64,6 +66,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     try {
       await ref.read(authProvider.notifier).signInWithGoogle(remember: _remember);
     } on ApiException catch (e) {
+      if (!mounted) return;
       setState(() => _formError = e.message);
     } finally {
       if (mounted) setState(() => _submitting = false);
