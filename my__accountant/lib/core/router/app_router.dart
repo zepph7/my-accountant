@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/auth/screens/login_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
 
@@ -68,7 +69,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       return onAuthRoute ? '/' : null;
     },
     routes: [
-      GoRoute(path: '/login', builder: (context, state) => const ComingSoonScreen('Login')),
+      GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
       GoRoute(path: '/register', builder: (context, state) => const ComingSoonScreen('Register')),
       ShellRoute(
         builder: (context, state, child) => _TabShell(child: child),

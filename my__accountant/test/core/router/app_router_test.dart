@@ -34,7 +34,7 @@ Future<void> _pump(WidgetTester tester, AuthState authState) async {
 void main() {
   testWidgets('unauthenticated shows the login screen at the root', (tester) async {
     await _pump(tester, const AuthState(status: AuthStatus.unauthenticated));
-    expect(find.text('Login — coming soon'), findsOneWidget);
+    expect(find.text('My Accountant'), findsOneWidget); // login screen heading
   });
 
   testWidgets('authenticated shows the tab shell with bottom navigation', (tester) async {
