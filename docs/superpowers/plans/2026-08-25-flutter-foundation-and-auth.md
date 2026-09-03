@@ -3511,21 +3511,24 @@ git commit -m "Add register screen"
 **Interfaces:**
 - Consumes: nothing in Dart; registers the `myaccountant://` scheme so `flutter_web_auth_2`'s callback (Task 12) is delivered back to the app instead of opened as a dead link.
 
-- [ ] **Step 1: Add the intent-filter to AndroidManifest.xml**
+- [ ] **Step 1: Register a separate CallbackActivity in AndroidManifest.xml**
 
-In `my__accountant/android/app/src/main/AndroidManifest.xml`, inside the `<activity>` block, add a second `<intent-filter>` after the existing launcher one (currently lines 23-26):
+`flutter_web_auth_2` requires the `myaccountant` scheme intent-filter to live on its OWN activity, `com.linusu.flutter_web_auth_2.CallbackActivity` — that's the only activity whose code actually resolves the pending OAuth callback (`CallbackActivity.kt` calls `FlutterWebAuth2Plugin.callbacks.remove(scheme)?.success(...)`; `MainActivity` has no such logic). Putting the intent-filter on `.MainActivity` instead routes the callback to `MainActivity` and leaves the pending call unresolved, so Google sign-in silently fails.
+
+In `my__accountant/android/app/src/main/AndroidManifest.xml`, leave `.MainActivity`'s `<activity>` block with only its original single LAUNCHER intent-filter, and add a new, separate `<activity>` block as a sibling of `MainActivity` (still inside `<application>`, after the `</activity>` that closes `MainActivity`):
 
 ```xml
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+        <activity
+            android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
+            android:exported="true"
+            android:taskAffinity="">
+            <intent-filter android:label="flutter_web_auth_2">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="myaccountant" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="myaccountant"/>
-            </intent-filter>
+        </activity>
 ```
 
 - [ ] **Step 2: Add the URL scheme to Info.plist**

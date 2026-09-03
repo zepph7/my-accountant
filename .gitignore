@@ -20,9 +20,10 @@ pnpm-debug.log*
 # React Native
 **/.expo-shared/
 
-# Native build folders
-**/android/
-**/ios/
+# Native build folders (Expo prebuild output for my_accountant only —
+# my__accountant is a Flutter project whose android/ios dirs are tracked source)
+my_accountant/android/
+my_accountant/ios/
 
 # Build outputs
 **/build/
