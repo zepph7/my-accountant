@@ -8,6 +8,8 @@ import '../../features/auth/screens/profile_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
+import '../../features/income/screens/income_create_screen.dart';
+import '../../features/income/screens/income_detail_screen.dart';
 import '../../features/income/screens/income_list_screen.dart';
 
 class ComingSoonScreen extends StatelessWidget {
@@ -83,6 +85,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
       GoRoute(path: '/register', builder: (context, state) => const RegisterScreen()),
+      GoRoute(path: '/income/new', builder: (context, state) => const IncomeCreateScreen()),
+      GoRoute(
+        path: '/income/:id',
+        builder: (context, state) => IncomeDetailScreen(id: state.pathParameters['id']!),
+      ),
       ShellRoute(
         builder: (context, state, child) => _TabShell(child: child),
         routes: [
