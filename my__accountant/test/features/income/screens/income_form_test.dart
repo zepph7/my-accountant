@@ -122,7 +122,9 @@ void main() {
 
     await tester.enterText(find.byKey(const Key('income-amount')), '1500');
     await tester.tap(find.text('Record income'));
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
 
     expect(find.text('Distribution percentages total 90%.'), findsOneWidget);
   });
@@ -138,6 +140,8 @@ void main() {
     ));
     await tester.pumpAndSettle();
 
+    await tester.ensureVisible(find.text('Delete income'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Delete income'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Delete'));
