@@ -8,6 +8,7 @@ import '../../features/auth/screens/profile_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
+import '../../features/expense/screens/expense_list_screen.dart';
 import '../../features/income/screens/income_create_screen.dart';
 import '../../features/income/screens/income_detail_screen.dart';
 import '../../features/income/screens/income_list_screen.dart';
@@ -97,7 +98,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(path: '/income', builder: (context, state) => const IncomeListScreen()),
           GoRoute(
             path: '/expenses',
-            builder: (context, state) => const ComingSoonScreen('Expenses'),
+            builder: (context, state) => const ExpenseListScreen(),
           ),
           GoRoute(path: '/reports', builder: (context, state) => const ComingSoonScreen('Reports')),
           GoRoute(
