@@ -8,12 +8,14 @@ import '../../features/auth/screens/profile_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
+import '../../features/expense/screens/expense_categories_screen.dart';
 import '../../features/expense/screens/expense_create_screen.dart';
 import '../../features/expense/screens/expense_detail_screen.dart';
 import '../../features/expense/screens/expense_list_screen.dart';
 import '../../features/income/screens/income_create_screen.dart';
 import '../../features/income/screens/income_detail_screen.dart';
 import '../../features/income/screens/income_list_screen.dart';
+import '../../features/income/screens/income_sources_screen.dart';
 
 class ComingSoonScreen extends StatelessWidget {
   const ComingSoonScreen(this.title, {super.key});
@@ -115,6 +117,14 @@ final routerProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: 'profile',
                 builder: (context, state) => const ProfileScreen(),
+              ),
+              GoRoute(
+                path: 'sources',
+                builder: (context, state) => const IncomeSourcesScreen(),
+              ),
+              GoRoute(
+                path: 'categories',
+                builder: (context, state) => const ExpenseCategoriesScreen(),
               ),
             ],
           ),
