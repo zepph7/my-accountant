@@ -8,6 +8,8 @@ import '../../features/auth/screens/profile_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
+import '../../features/expense/screens/expense_create_screen.dart';
+import '../../features/expense/screens/expense_detail_screen.dart';
 import '../../features/expense/screens/expense_list_screen.dart';
 import '../../features/income/screens/income_create_screen.dart';
 import '../../features/income/screens/income_detail_screen.dart';
@@ -90,6 +92,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/income/:id',
         builder: (context, state) => IncomeDetailScreen(id: state.pathParameters['id']!),
+      ),
+      GoRoute(path: '/expense/new', builder: (context, state) => const ExpenseCreateScreen()),
+      GoRoute(
+        path: '/expense/:id',
+        builder: (context, state) => ExpenseDetailScreen(id: state.pathParameters['id']!),
       ),
       ShellRoute(
         builder: (context, state, child) => _TabShell(child: child),
