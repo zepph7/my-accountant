@@ -8,6 +8,7 @@ import '../../features/auth/screens/profile_screen.dart';
 import '../../features/auth/screens/register_screen.dart';
 import '../../features/auth/state/auth_provider.dart';
 import '../../features/auth/state/auth_state.dart';
+import '../../features/income/screens/income_list_screen.dart';
 
 class ComingSoonScreen extends StatelessWidget {
   const ComingSoonScreen(this.title, {super.key});
@@ -86,7 +87,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state, child) => _TabShell(child: child),
         routes: [
           GoRoute(path: '/', builder: (context, state) => const ComingSoonScreen('Home')),
-          GoRoute(path: '/income', builder: (context, state) => const ComingSoonScreen('Income')),
+          GoRoute(path: '/income', builder: (context, state) => const IncomeListScreen()),
           GoRoute(
             path: '/expenses',
             builder: (context, state) => const ComingSoonScreen('Expenses'),
