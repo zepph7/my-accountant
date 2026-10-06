@@ -1,0 +1,1002 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1788450546.8718023,
+    "ast_hash": "4c5021c4ce6f3a20bf77bd7cc21d478a",
+    "semantic_hash": "4c5021c4ce6f3a20bf77bd7cc21d478a"
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1785445020.9883265,
+    "ast_hash": "8968cc77b7c42d2abcbb43a55c50e5a0",
+    "semantic_hash": "8968cc77b7c42d2abcbb43a55c50e5a0"
+  },
+  "backend/.oxlintrc.json": {
+    "mtime": 1785445073.5488622,
+    "ast_hash": "72623cf978f1f29794f275976ac47daf",
+    "semantic_hash": "72623cf978f1f29794f275976ac47daf"
+  },
+  "backend/c4.ts": {
+    "mtime": 1785683509.4307263,
+    "ast_hash": "7353fe55d9c12fc1ad86ba5ee1689e2d",
+    "semantic_hash": "7353fe55d9c12fc1ad86ba5ee1689e2d"
+  },
+  "backend/jest.config.js": {
+    "mtime": 1785452284.0123906,
+    "ast_hash": "d5f92529e5c2877118490290a482edf9",
+    "semantic_hash": "d5f92529e5c2877118490290a482edf9"
+  },
+  "backend/migrations/0001_extensions-enums-functions.js": {
+    "mtime": 1785445637.6861365,
+    "ast_hash": "48b0c243a07b6ba36b67170e801cc33e",
+    "semantic_hash": "48b0c243a07b6ba36b67170e801cc33e"
+  },
+  "backend/migrations/0002_users.js": {
+    "mtime": 1785445657.9109154,
+    "ast_hash": "8bfafc06db53e6a746018c50588b7035",
+    "semantic_hash": "8bfafc06db53e6a746018c50588b7035"
+  },
+  "backend/migrations/0003_refresh_tokens.js": {
+    "mtime": 1785445672.1809733,
+    "ast_hash": "4e9d30407bf85b4a1cf09cc3e6a9532e",
+    "semantic_hash": "4e9d30407bf85b4a1cf09cc3e6a9532e"
+  },
+  "backend/migrations/0004_categories-and-sources.js": {
+    "mtime": 1785445694.3570979,
+    "ast_hash": "934d3d9d8a8f49dc8abd17b65c621fca",
+    "semantic_hash": "934d3d9d8a8f49dc8abd17b65c621fca"
+  },
+  "backend/migrations/0005_incomes-and-distributed-incomes.js": {
+    "mtime": 1785445719.7680445,
+    "ast_hash": "5863daa479a4d2229ddaa2da93afe92e",
+    "semantic_hash": "5863daa479a4d2229ddaa2da93afe92e"
+  },
+  "backend/migrations/0006_expenses.js": {
+    "mtime": 1785445737.010069,
+    "ast_hash": "bebe47a3bc7790f05c0b460db4d4327a",
+    "semantic_hash": "bebe47a3bc7790f05c0b460db4d4327a"
+  },
+  "backend/migrations/0007_overview.js": {
+    "mtime": 1785445752.748731,
+    "ast_hash": "d45c20783dcc77e9c4b155536a86a935",
+    "semantic_hash": "d45c20783dcc77e9c4b155536a86a935"
+  },
+  "backend/migrations/0008_audit-tables.js": {
+    "mtime": 1785445795.4108026,
+    "ast_hash": "8752a07201629cd2f5aa52bc38be2a4c",
+    "semantic_hash": "8752a07201629cd2f5aa52bc38be2a4c"
+  },
+  "backend/migrations/0009_wallet-dimension.js": {
+    "mtime": 1785451169.749923,
+    "ast_hash": "5f4c380e32c60397500aac4f4eea3228",
+    "semantic_hash": "5f4c380e32c60397500aac4f4eea3228"
+  },
+  "backend/migrations/0010_users-phone.js": {
+    "mtime": 1785679533.723531,
+    "ast_hash": "6c2683532038abf474472af60cfca129",
+    "semantic_hash": "6c2683532038abf474472af60cfca129"
+  },
+  "backend/package.json": {
+    "mtime": 1785478770.5212533,
+    "ast_hash": "d6f115adf755ae6075effc14fcb59722",
+    "semantic_hash": "d6f115adf755ae6075effc14fcb59722"
+  },
+  "backend/scripts/migrate.js": {
+    "mtime": 1785448310.131584,
+    "ast_hash": "4a10d3bfc81ac1f0c32b57781160cad2",
+    "semantic_hash": "4a10d3bfc81ac1f0c32b57781160cad2"
+  },
+  "backend/src/app.ts": {
+    "mtime": 1785481107.5293095,
+    "ast_hash": "f9510314db2c6158abe209ea51b084f9",
+    "semantic_hash": "f9510314db2c6158abe209ea51b084f9"
+  },
+  "backend/src/config/db.ts": {
+    "mtime": 1785453405.2387285,
+    "ast_hash": "399ac3105729d40c4bc18604643f692f",
+    "semantic_hash": "399ac3105729d40c4bc18604643f692f"
+  },
+  "backend/src/config/env.ts": {
+    "mtime": 1785447095.8523588,
+    "ast_hash": "7424b35a330dfde372c17a7e17f8200b",
+    "semantic_hash": "7424b35a330dfde372c17a7e17f8200b"
+  },
+  "backend/src/config/logger.ts": {
+    "mtime": 1785447027.5577464,
+    "ast_hash": "50fe4b0df78e8c216a5e3fc44066b9b3",
+    "semantic_hash": "50fe4b0df78e8c216a5e3fc44066b9b3"
+  },
+  "backend/src/config/sentry.ts": {
+    "mtime": 1785479443.5978978,
+    "ast_hash": "7aa41b72c8d7e32cb557cf83109f90ea",
+    "semantic_hash": "7aa41b72c8d7e32cb557cf83109f90ea"
+  },
+  "backend/src/controllers/auth.controller.ts": {
+    "mtime": 1785683190.5923052,
+    "ast_hash": "16e2131ce5e265b61dddcae2468a7fde",
+    "semantic_hash": "16e2131ce5e265b61dddcae2468a7fde"
+  },
+  "backend/src/controllers/distributionCategory.controller.ts": {
+    "mtime": 1785478973.6331673,
+    "ast_hash": "459be6c7005d811636185c14adba9b18",
+    "semantic_hash": "459be6c7005d811636185c14adba9b18"
+  },
+  "backend/src/controllers/expense.controller.ts": {
+    "mtime": 1785479225.4567163,
+    "ast_hash": "82d3d9fa837e744bab94ee069c6b80e4",
+    "semantic_hash": "82d3d9fa837e744bab94ee069c6b80e4"
+  },
+  "backend/src/controllers/income.controller.ts": {
+    "mtime": 1785453241.4501133,
+    "ast_hash": "f5ee27391ae279ff4607135a2b6fa41b",
+    "semantic_hash": "f5ee27391ae279ff4607135a2b6fa41b"
+  },
+  "backend/src/controllers/overview.controller.ts": {
+    "mtime": 1785478983.865365,
+    "ast_hash": "4e992c5e6efb63c48d8a098eb4fe6539",
+    "semantic_hash": "4e992c5e6efb63c48d8a098eb4fe6539"
+  },
+  "backend/src/controllers/report.controller.ts": {
+    "mtime": 1785475964.7816398,
+    "ast_hash": "0620c60d0e19b4d1fc95863a013e7159",
+    "semantic_hash": "0620c60d0e19b4d1fc95863a013e7159"
+  },
+  "backend/src/docs/openapi.ts": {
+    "mtime": 1785683276.3111148,
+    "ast_hash": "58bb5cbb38d1cf9d0ca4b4c18ec8c029",
+    "semantic_hash": "58bb5cbb38d1cf9d0ca4b4c18ec8c029"
+  },
+  "backend/src/jobs/index.ts": {
+    "mtime": 1785479065.271375,
+    "ast_hash": "9d5040aa43793fbb48b177b2e14d95c4",
+    "semantic_hash": "9d5040aa43793fbb48b177b2e14d95c4"
+  },
+  "backend/src/jobs/queue.ts": {
+    "mtime": 1785479046.876163,
+    "ast_hash": "6de068465a1112c2104d6e5aaece6537",
+    "semantic_hash": "6de068465a1112c2104d6e5aaece6537"
+  },
+  "backend/src/middlewares/auth.middleware.ts": {
+    "mtime": 1785451343.0746102,
+    "ast_hash": "fa56911a5230b01420fd79b1ecd0ed17",
+    "semantic_hash": "fa56911a5230b01420fd79b1ecd0ed17"
+  },
+  "backend/src/middlewares/error.middleware.ts": {
+    "mtime": 1785479109.163561,
+    "ast_hash": "15f2d2e36a4355cf3134eded70f1debc",
+    "semantic_hash": "15f2d2e36a4355cf3134eded70f1debc"
+  },
+  "backend/src/middlewares/rateLimiter.middleware.ts": {
+    "mtime": 1785679775.3335035,
+    "ast_hash": "df5d19d0e04bdeac74303b8d0842dce8",
+    "semantic_hash": "df5d19d0e04bdeac74303b8d0842dce8"
+  },
+  "backend/src/middlewares/validate.middleware.ts": {
+    "mtime": 1785451360.6566753,
+    "ast_hash": "b7d69299d4ae54cc62fc78d0d9868785",
+    "semantic_hash": "b7d69299d4ae54cc62fc78d0d9868785"
+  },
+  "backend/src/repositories/distributionCategory.repository.ts": {
+    "mtime": 1785478851.9120002,
+    "ast_hash": "c9e971f589784ccf39fc1f62461b7e46",
+    "semantic_hash": "c9e971f589784ccf39fc1f62461b7e46"
+  },
+  "backend/src/repositories/expense.repository.ts": {
+    "mtime": 1785473963.671463,
+    "ast_hash": "e6978e36fb73a2c2205668aefddc3747",
+    "semantic_hash": "e6978e36fb73a2c2205668aefddc3747"
+  },
+  "backend/src/repositories/expenseCategory.repository.ts": {
+    "mtime": 1785473925.6834266,
+    "ast_hash": "ca8d6cb7adbd66bd87a5f1e0525c2a59",
+    "semantic_hash": "ca8d6cb7adbd66bd87a5f1e0525c2a59"
+  },
+  "backend/src/repositories/income.repository.ts": {
+    "mtime": 1785452947.809085,
+    "ast_hash": "4cd37de587e912385a1039f82972dd91",
+    "semantic_hash": "4cd37de587e912385a1039f82972dd91"
+  },
+  "backend/src/repositories/incomeSource.repository.ts": {
+    "mtime": 1785452904.4781342,
+    "ast_hash": "cbf0628c4d3f03d2a0b254d677bdbc09",
+    "semantic_hash": "cbf0628c4d3f03d2a0b254d677bdbc09"
+  },
+  "backend/src/repositories/overview.repository.ts": {
+    "mtime": 1785478867.0885541,
+    "ast_hash": "dc52779ce786510d39a38d94d94a502c",
+    "semantic_hash": "dc52779ce786510d39a38d94d94a502c"
+  },
+  "backend/src/repositories/refreshToken.repository.ts": {
+    "mtime": 1785451288.1286488,
+    "ast_hash": "7d5f901b28950a827729b8b4d0a6bdfa",
+    "semantic_hash": "7d5f901b28950a827729b8b4d0a6bdfa"
+  },
+  "backend/src/repositories/report.repository.ts": {
+    "mtime": 1785476495.7636898,
+    "ast_hash": "129a77cb1a2e993ec34fa09e0afe78e0",
+    "semantic_hash": "129a77cb1a2e993ec34fa09e0afe78e0"
+  },
+  "backend/src/repositories/user.repository.ts": {
+    "mtime": 1785683121.8681996,
+    "ast_hash": "53a5eb9cedac5d1ffcf42c5a6bbbf320",
+    "semantic_hash": "53a5eb9cedac5d1ffcf42c5a6bbbf320"
+  },
+  "backend/src/routes/auth.routes.ts": {
+    "mtime": 1785683227.0500643,
+    "ast_hash": "02e6ca538e8215e2419de41a62f17370",
+    "semantic_hash": "02e6ca538e8215e2419de41a62f17370"
+  },
+  "backend/src/routes/distributionCategory.routes.ts": {
+    "mtime": 1785478993.10365,
+    "ast_hash": "a37f706c87ba06485fc62d47f25f00d5",
+    "semantic_hash": "a37f706c87ba06485fc62d47f25f00d5"
+  },
+  "backend/src/routes/expense.routes.ts": {
+    "mtime": 1785474064.2210538,
+    "ast_hash": "dd8ae3a3e1a9e74951e18517e4a9d490",
+    "semantic_hash": "dd8ae3a3e1a9e74951e18517e4a9d490"
+  },
+  "backend/src/routes/expenseCategory.routes.ts": {
+    "mtime": 1785474080.96233,
+    "ast_hash": "c78ae7170f412ad3a43dcdedb0ace31d",
+    "semantic_hash": "c78ae7170f412ad3a43dcdedb0ace31d"
+  },
+  "backend/src/routes/income.routes.ts": {
+    "mtime": 1785453062.4591844,
+    "ast_hash": "62b23a26fad481abd0d3271646efe33b",
+    "semantic_hash": "62b23a26fad481abd0d3271646efe33b"
+  },
+  "backend/src/routes/incomeSource.routes.ts": {
+    "mtime": 1785453094.0895817,
+    "ast_hash": "cfb4709a32deab837b33d8ffd0d90258",
+    "semantic_hash": "cfb4709a32deab837b33d8ffd0d90258"
+  },
+  "backend/src/routes/index.ts": {
+    "mtime": 1785479347.4415252,
+    "ast_hash": "08547693a8301b9d43dacc2454db39e0",
+    "semantic_hash": "08547693a8301b9d43dacc2454db39e0"
+  },
+  "backend/src/routes/overview.routes.ts": {
+    "mtime": 1785479005.3927011,
+    "ast_hash": "8c9ee9cf5e9b285c6f63c5f27b30c7bc",
+    "semantic_hash": "8c9ee9cf5e9b285c6f63c5f27b30c7bc"
+  },
+  "backend/src/routes/report.routes.ts": {
+    "mtime": 1785475979.6712532,
+    "ast_hash": "3b8c1930fe795a4196bfa25bd39847c2",
+    "semantic_hash": "3b8c1930fe795a4196bfa25bd39847c2"
+  },
+  "backend/src/server.ts": {
+    "mtime": 1785479454.0464115,
+    "ast_hash": "a2c2595a35b67e87169e7ead7dd69ece",
+    "semantic_hash": "a2c2595a35b67e87169e7ead7dd69ece"
+  },
+  "backend/src/services/auth.service.ts": {
+    "mtime": 1785683166.3401566,
+    "ast_hash": "25cad6dab10f40b55e9e77cc7d1bfa91",
+    "semantic_hash": "25cad6dab10f40b55e9e77cc7d1bfa91"
+  },
+  "backend/src/services/distribution.service.ts": {
+    "mtime": 1785447174.430022,
+    "ast_hash": "b9ffe4c5da23702d6a4781b3e5c4124c",
+    "semantic_hash": "b9ffe4c5da23702d6a4781b3e5c4124c"
+  },
+  "backend/src/services/distributionCategory.service.ts": {
+    "mtime": 1785478917.5952215,
+    "ast_hash": "06f3d8c2dcab176dedb00f544338bb50",
+    "semantic_hash": "06f3d8c2dcab176dedb00f544338bb50"
+  },
+  "backend/src/services/expense.service.ts": {
+    "mtime": 1785479215.4558854,
+    "ast_hash": "492129231272514c36edff26d24f3a3e",
+    "semantic_hash": "492129231272514c36edff26d24f3a3e"
+  },
+  "backend/src/services/google.service.ts": {
+    "mtime": 1785452749.3698707,
+    "ast_hash": "b4bd40573ca7b03388296ebe1b01143a",
+    "semantic_hash": "b4bd40573ca7b03388296ebe1b01143a"
+  },
+  "backend/src/services/income.service.ts": {
+    "mtime": 1785479127.0037093,
+    "ast_hash": "6cb2dda08db66c1766c6852b2b4379ea",
+    "semantic_hash": "6cb2dda08db66c1766c6852b2b4379ea"
+  },
+  "backend/src/services/overview.service.ts": {
+    "mtime": 1785478930.825795,
+    "ast_hash": "05d9b8cf8ddc653c753f7f4c06698496",
+    "semantic_hash": "05d9b8cf8ddc653c753f7f4c06698496"
+  },
+  "backend/src/services/report.service.ts": {
+    "mtime": 1785476534.6290362,
+    "ast_hash": "80fa150b3907c25200fb49bca0cddc73",
+    "semantic_hash": "80fa150b3907c25200fb49bca0cddc73"
+  },
+  "backend/src/services/token.service.ts": {
+    "mtime": 1785682698.8529658,
+    "ast_hash": "47e61749cb8ccba916a4fc73925d1a32",
+    "semantic_hash": "47e61749cb8ccba916a4fc73925d1a32"
+  },
+  "backend/src/sockets/index.ts": {
+    "mtime": 1785479025.405697,
+    "ast_hash": "048850131f8da83971662921d5a1d6e6",
+    "semantic_hash": "048850131f8da83971662921d5a1d6e6"
+  },
+  "backend/src/types/index.d.ts": {
+    "mtime": 1785682698.8549666,
+    "ast_hash": "e1eb9327243b65cb887385e6986f293c",
+    "semantic_hash": "e1eb9327243b65cb887385e6986f293c"
+  },
+  "backend/src/types/models.ts": {
+    "mtime": 1785682698.8519664,
+    "ast_hash": "f139eb140647d4a7a87613772df164b7",
+    "semantic_hash": "f139eb140647d4a7a87613772df164b7"
+  },
+  "backend/src/utils/ApiError.ts": {
+    "mtime": 1785447134.561817,
+    "ast_hash": "da61e8618f81deb81b87fdc58efeb82d",
+    "semantic_hash": "da61e8618f81deb81b87fdc58efeb82d"
+  },
+  "backend/src/utils/ApiResponse.ts": {
+    "mtime": 1785478959.2375345,
+    "ast_hash": "cca82750583ffdde8169557049094361",
+    "semantic_hash": "cca82750583ffdde8169557049094361"
+  },
+  "backend/src/utils/asyncHandler.ts": {
+    "mtime": 1785451204.5229385,
+    "ast_hash": "67702c6ccdba807a95111716fa7571c0",
+    "semantic_hash": "67702c6ccdba807a95111716fa7571c0"
+  },
+  "backend/src/utils/money.ts": {
+    "mtime": 1785447150.4687319,
+    "ast_hash": "70d15bae998c3b03c9264c6cc9982bb7",
+    "semantic_hash": "70d15bae998c3b03c9264c6cc9982bb7"
+  },
+  "backend/src/validators/auth.validator.ts": {
+    "mtime": 1785683142.1514266,
+    "ast_hash": "4413a34645cdb0a5aa18e8a0ed133938",
+    "semantic_hash": "4413a34645cdb0a5aa18e8a0ed133938"
+  },
+  "backend/src/validators/common.validator.ts": {
+    "mtime": 1785682821.1755393,
+    "ast_hash": "2e494beed4d8e9c8c009b5ca2a2e2d36",
+    "semantic_hash": "2e494beed4d8e9c8c009b5ca2a2e2d36"
+  },
+  "backend/src/validators/distributionCategory.validator.ts": {
+    "mtime": 1785478892.605912,
+    "ast_hash": "46d16119dc1811a4966ad0971b0f7e37",
+    "semantic_hash": "46d16119dc1811a4966ad0971b0f7e37"
+  },
+  "backend/src/validators/expense.validator.ts": {
+    "mtime": 1785474012.7914512,
+    "ast_hash": "b786bd6568290d3257dfc5a7ae3463b4",
+    "semantic_hash": "b786bd6568290d3257dfc5a7ae3463b4"
+  },
+  "backend/src/validators/income.validator.ts": {
+    "mtime": 1785452999.8444035,
+    "ast_hash": "c84d04b2203162b1ef147e6a9de1d4cc",
+    "semantic_hash": "c84d04b2203162b1ef147e6a9de1d4cc"
+  },
+  "backend/src/validators/overview.validator.ts": {
+    "mtime": 1785478901.3549452,
+    "ast_hash": "9df139aa318d6fa8bcacddf10e0db388",
+    "semantic_hash": "9df139aa318d6fa8bcacddf10e0db388"
+  },
+  "backend/src/validators/report.validator.ts": {
+    "mtime": 1785475656.0246656,
+    "ast_hash": "c6b21a662ed4bb9a957fecfe804a3ffb",
+    "semantic_hash": "c6b21a662ed4bb9a957fecfe804a3ffb"
+  },
+  "backend/tests/integration/auth.test.ts": {
+    "mtime": 1785451561.5498378,
+    "ast_hash": "1606247d7e6e430bf1cdaf7a07fe43df",
+    "semantic_hash": "1606247d7e6e430bf1cdaf7a07fe43df"
+  },
+  "backend/tests/integration/expense.test.ts": {
+    "mtime": 1785474178.7145398,
+    "ast_hash": "03269e4dbb64e31c9833bf6f58e64011",
+    "semantic_hash": "03269e4dbb64e31c9833bf6f58e64011"
+  },
+  "backend/tests/integration/income.test.ts": {
+    "mtime": 1785453296.654587,
+    "ast_hash": "9a67251a9cfedf70c2bb015f71094918",
+    "semantic_hash": "9a67251a9cfedf70c2bb015f71094918"
+  },
+  "backend/tests/integration/report.test.ts": {
+    "mtime": 1785476693.080577,
+    "ast_hash": "749d1a44feeb1bf09731d6218452e0b0",
+    "semantic_hash": "749d1a44feeb1bf09731d6218452e0b0"
+  },
+  "backend/tests/unit/distribution.service.test.ts": {
+    "mtime": 1785447199.5274267,
+    "ast_hash": "23890044f3c69fcb27b5ce3a3359c89f",
+    "semantic_hash": "23890044f3c69fcb27b5ce3a3359c89f"
+  },
+  "backend/tsconfig.json": {
+    "mtime": 1785476233.2687247,
+    "ast_hash": "89be89e39b93de7a0a19c76bb5362ad5",
+    "semantic_hash": "89be89e39b93de7a0a19c76bb5362ad5"
+  },
+  "my__accountant/lib/main.dart": {
+    "mtime": 1787609999.6575553,
+    "ast_hash": "69617c0fc3dadefc5632aaea8ee2f59d",
+    "semantic_hash": "69617c0fc3dadefc5632aaea8ee2f59d"
+  },
+  "my__accountant/linux/flutter/generated_plugin_registrant.cc": {
+    "mtime": 1787610223.8376536,
+    "ast_hash": "d07afe003d5837167bdd357d593f20a0",
+    "semantic_hash": "d07afe003d5837167bdd357d593f20a0"
+  },
+  "my__accountant/linux/flutter/generated_plugin_registrant.h": {
+    "mtime": 1787610223.8326533,
+    "ast_hash": "d295462c9da9f7fef22dc86c34492318",
+    "semantic_hash": "d295462c9da9f7fef22dc86c34492318"
+  },
+  "my__accountant/linux/runner/main.cc": {
+    "mtime": 1787140440.0,
+    "ast_hash": "539395bcd63dba20afed0838d136189f",
+    "semantic_hash": "539395bcd63dba20afed0838d136189f"
+  },
+  "my__accountant/linux/runner/my_application.cc": {
+    "mtime": 1787610000.0710864,
+    "ast_hash": "a2af13f3c47d28b52c7d23de50060656",
+    "semantic_hash": "a2af13f3c47d28b52c7d23de50060656"
+  },
+  "my__accountant/linux/runner/my_application.h": {
+    "mtime": 1787140440.0,
+    "ast_hash": "ffa1a7c0a2ad45a2c14a921596516ff8",
+    "semantic_hash": "ffa1a7c0a2ad45a2c14a921596516ff8"
+  },
+  "my__accountant/macos/Flutter/GeneratedPluginRegistrant.swift": {
+    "mtime": 1787610223.8930938,
+    "ast_hash": "c840bc53b61279c2fb631741134c2ed7",
+    "semantic_hash": "c840bc53b61279c2fb631741134c2ed7"
+  },
+  "my__accountant/macos/RunnerTests/RunnerTests.swift": {
+    "mtime": 1787610000.771181,
+    "ast_hash": "8059f5d27a19c556eeafb49b3f9b7bdd",
+    "semantic_hash": "8059f5d27a19c556eeafb49b3f9b7bdd"
+  },
+  "my__accountant/macos/Runner/AppDelegate.swift": {
+    "mtime": 1787140440.0,
+    "ast_hash": "4b52e0b89ebfef9baf45b04548c463d6",
+    "semantic_hash": "4b52e0b89ebfef9baf45b04548c463d6"
+  },
+  "my__accountant/macos/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json": {
+    "mtime": 1787140440.0,
+    "ast_hash": "1d48e925145d4b573a3b5d7960a1c585",
+    "semantic_hash": "1d48e925145d4b573a3b5d7960a1c585"
+  },
+  "my__accountant/macos/Runner/MainFlutterWindow.swift": {
+    "mtime": 1787140440.0,
+    "ast_hash": "93c22dae2d93f3dc1402e121901f582b",
+    "semantic_hash": "93c22dae2d93f3dc1402e121901f582b"
+  },
+  "my__accountant/test/widget_test.dart": {
+    "mtime": 1787610001.8622751,
+    "ast_hash": "096e1e20105529150b02f0de25d25396",
+    "semantic_hash": "096e1e20105529150b02f0de25d25396"
+  },
+  "my__accountant/web/manifest.json": {
+    "mtime": 1787610001.591293,
+    "ast_hash": "aa64eef9da74ebaad8421bdd93ded4a5",
+    "semantic_hash": "aa64eef9da74ebaad8421bdd93ded4a5"
+  },
+  "my__accountant/windows/flutter/generated_plugin_registrant.cc": {
+    "mtime": 1787610223.8517573,
+    "ast_hash": "a8f91348d8d9090f22ec69d597c41e1f",
+    "semantic_hash": "a8f91348d8d9090f22ec69d597c41e1f"
+  },
+  "my__accountant/windows/flutter/generated_plugin_registrant.h": {
+    "mtime": 1787610223.8487587,
+    "ast_hash": "0ea33875f9f8e118f9c2ded03e2e2835",
+    "semantic_hash": "0ea33875f9f8e118f9c2ded03e2e2835"
+  },
+  "my__accountant/windows/runner/flutter_window.cpp": {
+    "mtime": 1787140440.0,
+    "ast_hash": "2f463f9b7da67a2d692a012f9ea85e0c",
+    "semantic_hash": "2f463f9b7da67a2d692a012f9ea85e0c"
+  },
+  "my__accountant/windows/runner/flutter_window.h": {
+    "mtime": 1787140440.0,
+    "ast_hash": "7defcc89d4a26d56e801241d624d48fb",
+    "semantic_hash": "7defcc89d4a26d56e801241d624d48fb"
+  },
+  "my__accountant/windows/runner/main.cpp": {
+    "mtime": 1787610001.714283,
+    "ast_hash": "9143d1cbf5ed247997b213d71e98eea9",
+    "semantic_hash": "9143d1cbf5ed247997b213d71e98eea9"
+  },
+  "my__accountant/windows/runner/resource.h": {
+    "mtime": 1787140440.0,
+    "ast_hash": "1ade5dd15e613479a15e8832ed276f2b",
+    "semantic_hash": "1ade5dd15e613479a15e8832ed276f2b"
+  },
+  "my__accountant/windows/runner/utils.cpp": {
+    "mtime": 1787140440.0,
+    "ast_hash": "e18900a4c2c2962ad732d3b83f0396b9",
+    "semantic_hash": "e18900a4c2c2962ad732d3b83f0396b9"
+  },
+  "my__accountant/windows/runner/utils.h": {
+    "mtime": 1787140440.0,
+    "ast_hash": "fd81e143f5614eb6fd75efe539002853",
+    "semantic_hash": "fd81e143f5614eb6fd75efe539002853"
+  },
+  "my__accountant/windows/runner/win32_window.cpp": {
+    "mtime": 1787140440.0,
+    "ast_hash": "571eb8234dbc2661be03aa5f2a4d2fca",
+    "semantic_hash": "571eb8234dbc2661be03aa5f2a4d2fca"
+  },
+  "my__accountant/windows/runner/win32_window.h": {
+    "mtime": 1787140440.0,
+    "ast_hash": "7569387d58711ab975940f4df3b4bcda",
+    "semantic_hash": "7569387d58711ab975940f4df3b4bcda"
+  },
+  "my_accountant/.claude/settings.json": {
+    "mtime": 1785424764.1127489,
+    "ast_hash": "dc580fca35a0e98ed20777ede5e545a1",
+    "semantic_hash": "dc580fca35a0e98ed20777ede5e545a1"
+  },
+  "my_accountant/app.json": {
+    "mtime": 1786300960.5239303,
+    "ast_hash": "96fea21b1ccaace862d587803d5ffcc0",
+    "semantic_hash": "96fea21b1ccaace862d587803d5ffcc0"
+  },
+  "my_accountant/app/(auth)/_layout.tsx": {
+    "mtime": 1785678054.2679493,
+    "ast_hash": "3031e9e8a78c6429899abbb3f8eab6e2",
+    "semantic_hash": "3031e9e8a78c6429899abbb3f8eab6e2"
+  },
+  "my_accountant/app/(auth)/login.tsx": {
+    "mtime": 1786733735.7057698,
+    "ast_hash": "0d408dd4dee0bddb8c85a4cae1022ca0",
+    "semantic_hash": "0d408dd4dee0bddb8c85a4cae1022ca0"
+  },
+  "my_accountant/app/(auth)/register.tsx": {
+    "mtime": 1786505913.4895608,
+    "ast_hash": "81f33e5c64ed2adb31ee0fcbf7070e26",
+    "semantic_hash": "81f33e5c64ed2adb31ee0fcbf7070e26"
+  },
+  "my_accountant/app/(tabs)/_layout.tsx": {
+    "mtime": 1786295933.1509519,
+    "ast_hash": "9cc8d5ba4c61809b72f5de3446c1a51a",
+    "semantic_hash": "9cc8d5ba4c61809b72f5de3446c1a51a"
+  },
+  "my_accountant/app/(tabs)/expenses.tsx": {
+    "mtime": 1786296161.4430223,
+    "ast_hash": "9406c200b26c199b4908809b9fd11a47",
+    "semantic_hash": "9406c200b26c199b4908809b9fd11a47"
+  },
+  "my_accountant/app/(tabs)/income.tsx": {
+    "mtime": 1786296128.9197736,
+    "ast_hash": "b2d9a85ec8b1420f2df86487a8efe66e",
+    "semantic_hash": "b2d9a85ec8b1420f2df86487a8efe66e"
+  },
+  "my_accountant/app/(tabs)/index.tsx": {
+    "mtime": 1786505913.4915671,
+    "ast_hash": "2fe610bf4580477da65a9706e9923de6",
+    "semantic_hash": "2fe610bf4580477da65a9706e9923de6"
+  },
+  "my_accountant/app/(tabs)/reports.tsx": {
+    "mtime": 1786296565.4353945,
+    "ast_hash": "2822e325d80a79f345fa32a5153342b0",
+    "semantic_hash": "2822e325d80a79f345fa32a5153342b0"
+  },
+  "my_accountant/app/(tabs)/settings.tsx": {
+    "mtime": 1786505913.4935617,
+    "ast_hash": "722916bca093156221070a4ec1168d07",
+    "semantic_hash": "722916bca093156221070a4ec1168d07"
+  },
+  "my_accountant/app/_layout.tsx": {
+    "mtime": 1786295913.9134097,
+    "ast_hash": "470b6de1e3cea2f5bf258de19177d544",
+    "semantic_hash": "470b6de1e3cea2f5bf258de19177d544"
+  },
+  "my_accountant/app/expense/[id].tsx": {
+    "mtime": 1786296466.492507,
+    "ast_hash": "39d294ba20454acacd464a51156dd1e2",
+    "semantic_hash": "39d294ba20454acacd464a51156dd1e2"
+  },
+  "my_accountant/app/expense/new.tsx": {
+    "mtime": 1786296462.365181,
+    "ast_hash": "f4dfcc239852273e8df6713edad4f686",
+    "semantic_hash": "f4dfcc239852273e8df6713edad4f686"
+  },
+  "my_accountant/app/income/[id].tsx": {
+    "mtime": 1786296408.685159,
+    "ast_hash": "ecefcb28a2668f0c108af05d1696c82c",
+    "semantic_hash": "ecefcb28a2668f0c108af05d1696c82c"
+  },
+  "my_accountant/app/income/new.tsx": {
+    "mtime": 1786296404.3728082,
+    "ast_hash": "f5e7c572d2e9f925171af24b5713b6ca",
+    "semantic_hash": "f5e7c572d2e9f925171af24b5713b6ca"
+  },
+  "my_accountant/app/settings/balances.tsx": {
+    "mtime": 1786296834.835207,
+    "ast_hash": "cbab51e5d530cddb978dc65b8f245cc4",
+    "semantic_hash": "cbab51e5d530cddb978dc65b8f245cc4"
+  },
+  "my_accountant/app/settings/categories.tsx": {
+    "mtime": 1786296803.7290423,
+    "ast_hash": "74b8960a58c70862cc6b897be5857ef1",
+    "semantic_hash": "74b8960a58c70862cc6b897be5857ef1"
+  },
+  "my_accountant/app/settings/distribution.tsx": {
+    "mtime": 1786505913.495549,
+    "ast_hash": "661d8643ac0c0df059c4f7d51ff14e78",
+    "semantic_hash": "661d8643ac0c0df059c4f7d51ff14e78"
+  },
+  "my_accountant/app/settings/profile.tsx": {
+    "mtime": 1786296641.9074574,
+    "ast_hash": "fb57211d449a8cb242711c50fa545903",
+    "semantic_hash": "fb57211d449a8cb242711c50fa545903"
+  },
+  "my_accountant/app/settings/sources.tsx": {
+    "mtime": 1786296799.7145965,
+    "ast_hash": "1f2d680f2199a8a07fa20d3946d06937",
+    "semantic_hash": "1f2d680f2199a8a07fa20d3946d06937"
+  },
+  "my_accountant/babel.config.js": {
+    "mtime": 1785684838.5707366,
+    "ast_hash": "25bca21059e8f8a7735fe0cef0e45ef9",
+    "semantic_hash": "25bca21059e8f8a7735fe0cef0e45ef9"
+  },
+  "my_accountant/components/auth/auth-notice.tsx": {
+    "mtime": 1785685088.512666,
+    "ast_hash": "83225dd4cccc707b1567b4424f57112a",
+    "semantic_hash": "83225dd4cccc707b1567b4424f57112a"
+  },
+  "my_accountant/components/auth/auth-shell.tsx": {
+    "mtime": 1786295589.7563615,
+    "ast_hash": "2e71da26609905a5e1dcf845d1389753",
+    "semantic_hash": "2e71da26609905a5e1dcf845d1389753"
+  },
+  "my_accountant/components/auth/legal-consent.tsx": {
+    "mtime": 1785698640.5111368,
+    "ast_hash": "e4bbf0d06d8083485881784032be122f",
+    "semantic_hash": "e4bbf0d06d8083485881784032be122f"
+  },
+  "my_accountant/components/external-link.tsx": {
+    "mtime": 1785424428.4263434,
+    "ast_hash": "a71bdc8e0bd55812a1e97662ade442d1",
+    "semantic_hash": "a71bdc8e0bd55812a1e97662ade442d1"
+  },
+  "my_accountant/components/forms/expense-form.tsx": {
+    "mtime": 1786505913.4985487,
+    "ast_hash": "c9ffa558dcc3d4ffafea9effaf19808a",
+    "semantic_hash": "c9ffa558dcc3d4ffafea9effaf19808a"
+  },
+  "my_accountant/components/forms/income-form.tsx": {
+    "mtime": 1786505913.5005507,
+    "ast_hash": "232fdc53e8f15ce3f93c26743d84be26",
+    "semantic_hash": "232fdc53e8f15ce3f93c26743d84be26"
+  },
+  "my_accountant/components/forms/name-list.tsx": {
+    "mtime": 1786505913.502549,
+    "ast_hash": "22251c1114da03f9e9047e64b628c50c",
+    "semantic_hash": "22251c1114da03f9e9047e64b628c50c"
+  },
+  "my_accountant/components/haptic-tab.tsx": {
+    "mtime": 1785609785.2092593,
+    "ast_hash": "a82346e47d0bd4e1103c4792b2721148",
+    "semantic_hash": "a82346e47d0bd4e1103c4792b2721148"
+  },
+  "my_accountant/components/themed-text.tsx": {
+    "mtime": 1785424428.4395115,
+    "ast_hash": "c1f1947c3b24be35a7097cc46f71073a",
+    "semantic_hash": "c1f1947c3b24be35a7097cc46f71073a"
+  },
+  "my_accountant/components/themed-view.tsx": {
+    "mtime": 1785424428.4415133,
+    "ast_hash": "ffcbffb4831735916a920f2d0305f126",
+    "semantic_hash": "ffcbffb4831735916a920f2d0305f126"
+  },
+  "my_accountant/components/ui/action-button.tsx": {
+    "mtime": 1786505913.5045485,
+    "ast_hash": "3864ad71ba38631ed6a7109b6f10eacd",
+    "semantic_hash": "3864ad71ba38631ed6a7109b6f10eacd"
+  },
+  "my_accountant/components/ui/bar-chart.tsx": {
+    "mtime": 1786296496.9883955,
+    "ast_hash": "e83b48a51e651e799c5366f13417fd80",
+    "semantic_hash": "e83b48a51e651e799c5366f13417fd80"
+  },
+  "my_accountant/components/ui/card.tsx": {
+    "mtime": 1786505913.5075483,
+    "ast_hash": "9001be721210a0e0a4f75f5599a847ff",
+    "semantic_hash": "9001be721210a0e0a4f75f5599a847ff"
+  },
+  "my_accountant/components/ui/checkbox.tsx": {
+    "mtime": 1786505913.5095475,
+    "ast_hash": "f5da0e63451197975604a65588c48ebc",
+    "semantic_hash": "f5da0e63451197975604a65588c48ebc"
+  },
+  "my_accountant/components/ui/chip-select.tsx": {
+    "mtime": 1786505913.5125477,
+    "ast_hash": "9faed960e9d47db815cd5db9de33e50f",
+    "semantic_hash": "9faed960e9d47db815cd5db9de33e50f"
+  },
+  "my_accountant/components/ui/collapsible.tsx": {
+    "mtime": 1785424428.422343,
+    "ast_hash": "10ba95b344ca9a9846405b242153979a",
+    "semantic_hash": "10ba95b344ca9a9846405b242153979a"
+  },
+  "my_accountant/components/ui/date-field.tsx": {
+    "mtime": 1786296274.656473,
+    "ast_hash": "6c16a74947748d416c7f3180dcdc1a1f",
+    "semantic_hash": "6c16a74947748d416c7f3180dcdc1a1f"
+  },
+  "my_accountant/components/ui/fab.tsx": {
+    "mtime": 1786505913.5155478,
+    "ast_hash": "759a2e3c04ffa272ecd25605cec972e9",
+    "semantic_hash": "759a2e3c04ffa272ecd25605cec972e9"
+  },
+  "my_accountant/components/ui/google-mark.tsx": {
+    "mtime": 1785698435.100149,
+    "ast_hash": "781b9475e89bfaa3f3ae1d56e4baa5b5",
+    "semantic_hash": "781b9475e89bfaa3f3ae1d56e4baa5b5"
+  },
+  "my_accountant/components/ui/icon-symbol.ios.tsx": {
+    "mtime": 1785424428.4315124,
+    "ast_hash": "0f318b392e23d311c7094bdbb94d9c58",
+    "semantic_hash": "0f318b392e23d311c7094bdbb94d9c58"
+  },
+  "my_accountant/components/ui/icon-symbol.tsx": {
+    "mtime": 1785609694.1142704,
+    "ast_hash": "4f942df4c2484e0af28c216bfafed37a",
+    "semantic_hash": "4f942df4c2484e0af28c216bfafed37a"
+  },
+  "my_accountant/components/ui/option-sheet.tsx": {
+    "mtime": 1786505913.51756,
+    "ast_hash": "de6d8f27594f7793f4ba99b78f67ac8f",
+    "semantic_hash": "de6d8f27594f7793f4ba99b78f67ac8f"
+  },
+  "my_accountant/components/ui/or-divider.tsx": {
+    "mtime": 1786295825.7379296,
+    "ast_hash": "f6e5c4ce600ee89bbcc934794761397a",
+    "semantic_hash": "f6e5c4ce600ee89bbcc934794761397a"
+  },
+  "my_accountant/components/ui/pressable.tsx": {
+    "mtime": 1786505759.978716,
+    "ast_hash": "1091e124562d51ab50217882da703ad8",
+    "semantic_hash": "1091e124562d51ab50217882da703ad8"
+  },
+  "my_accountant/components/ui/screen.tsx": {
+    "mtime": 1786505913.5185483,
+    "ast_hash": "63ef7bea6590ee3f7406da511ef53fcc",
+    "semantic_hash": "63ef7bea6590ee3f7406da511ef53fcc"
+  },
+  "my_accountant/components/ui/segmented-tabs.tsx": {
+    "mtime": 1786505913.5205474,
+    "ast_hash": "7cd7c7063d9cf132f44fa1a38376ad49",
+    "semantic_hash": "7cd7c7063d9cf132f44fa1a38376ad49"
+  },
+  "my_accountant/components/ui/split-bar.tsx": {
+    "mtime": 1786295500.8285537,
+    "ast_hash": "0c867debf9070c9e0a29823594253a9f",
+    "semantic_hash": "0c867debf9070c9e0a29823594253a9f"
+  },
+  "my_accountant/components/ui/text-field.tsx": {
+    "mtime": 1786505913.5215478,
+    "ast_hash": "cbf37696315c8f8eff3ed60d7e83fcd5",
+    "semantic_hash": "cbf37696315c8f8eff3ed60d7e83fcd5"
+  },
+  "my_accountant/components/ui/transaction-row.tsx": {
+    "mtime": 1786505913.5235467,
+    "ast_hash": "a66072bff1a7319b2b61241c281a2059",
+    "semantic_hash": "a66072bff1a7319b2b61241c281a2059"
+  },
+  "my_accountant/constants/colors.ts": {
+    "mtime": 1785698370.8423667,
+    "ast_hash": "cca01420ddc7f8fc3f71b3b541a5e517",
+    "semantic_hash": "cca01420ddc7f8fc3f71b3b541a5e517"
+  },
+  "my_accountant/constants/palette.js": {
+    "mtime": 1785698361.4625256,
+    "ast_hash": "bc927bd72a20891a3491ba93dbe926f9",
+    "semantic_hash": "bc927bd72a20891a3491ba93dbe926f9"
+  },
+  "my_accountant/constants/theme.ts": {
+    "mtime": 1786297412.3536134,
+    "ast_hash": "3bce6c8227021789f47206ec3868cb11",
+    "semantic_hash": "3bce6c8227021789f47206ec3868cb11"
+  },
+  "my_accountant/eas.json": {
+    "mtime": 1786306536.4853623,
+    "ast_hash": "ccee45fc3f9db57190f6f322bb929b81",
+    "semantic_hash": "ccee45fc3f9db57190f6f322bb929b81"
+  },
+  "my_accountant/eslint.config.js": {
+    "mtime": 1785424428.3335917,
+    "ast_hash": "560a864580ad8107fbbf8d6d452c82fe",
+    "semantic_hash": "560a864580ad8107fbbf8d6d452c82fe"
+  },
+  "my_accountant/hooks/use-color-scheme.ts": {
+    "mtime": 1785609681.5148065,
+    "ast_hash": "8378cdf43af63bea614f73cfdbc8f768",
+    "semantic_hash": "8378cdf43af63bea614f73cfdbc8f768"
+  },
+  "my_accountant/hooks/use-color-scheme.web.ts": {
+    "mtime": 1785424428.4113457,
+    "ast_hash": "071fbb9a1a05ffb8af4b7d3b1ffa72d6",
+    "semantic_hash": "071fbb9a1a05ffb8af4b7d3b1ffa72d6"
+  },
+  "my_accountant/hooks/use-paged-list.ts": {
+    "mtime": 1786296039.8359985,
+    "ast_hash": "7c8d1cf5303ca72dbd87ae418fdeed58",
+    "semantic_hash": "7c8d1cf5303ca72dbd87ae418fdeed58"
+  },
+  "my_accountant/hooks/use-query.ts": {
+    "mtime": 1786295210.6782837,
+    "ast_hash": "291e1015abe52304bc87335bc49eb72c",
+    "semantic_hash": "291e1015abe52304bc87335bc49eb72c"
+  },
+  "my_accountant/hooks/use-theme-color.ts": {
+    "mtime": 1785424428.4133444,
+    "ast_hash": "e9ac2719e4d914a6913252bb57b368d9",
+    "semantic_hash": "e9ac2719e4d914a6913252bb57b368d9"
+  },
+  "my_accountant/hooks/use-theme-colors.ts": {
+    "mtime": 1785684870.759946,
+    "ast_hash": "903301a14b700f68b34fe84c92e776a3",
+    "semantic_hash": "903301a14b700f68b34fe84c92e776a3"
+  },
+  "my_accountant/lib/api.ts": {
+    "mtime": 1786296908.7428815,
+    "ast_hash": "0ebf5aec33f1de89bbe0b5f422da5019",
+    "semantic_hash": "0ebf5aec33f1de89bbe0b5f422da5019"
+  },
+  "my_accountant/lib/auth-client.ts": {
+    "mtime": 1786295030.2135592,
+    "ast_hash": "3c637ebd676c94d7afc41d1bbe2f75f5",
+    "semantic_hash": "3c637ebd676c94d7afc41d1bbe2f75f5"
+  },
+  "my_accountant/lib/auth-validation.ts": {
+    "mtime": 1786507441.8349216,
+    "ast_hash": "9824667edb09c9a509c9312255188369",
+    "semantic_hash": "9824667edb09c9a509c9312255188369"
+  },
+  "my_accountant/lib/endpoints.ts": {
+    "mtime": 1786296908.7439022,
+    "ast_hash": "a3a1edde88be2c8dac1d11f59aa35bae",
+    "semantic_hash": "a3a1edde88be2c8dac1d11f59aa35bae"
+  },
+  "my_accountant/lib/format.ts": {
+    "mtime": 1786295069.7181487,
+    "ast_hash": "24c3853b82e329049c2a58d74457b7ab",
+    "semantic_hash": "24c3853b82e329049c2a58d74457b7ab"
+  },
+  "my_accountant/lib/money-validation.ts": {
+    "mtime": 1786296295.1305082,
+    "ast_hash": "e4f8edba1ee6c73eb518d8bd121b1b4f",
+    "semantic_hash": "e4f8edba1ee6c73eb518d8bd121b1b4f"
+  },
+  "my_accountant/lib/session.ts": {
+    "mtime": 1786294889.7035031,
+    "ast_hash": "729af16a5c2d3b363807a5f77c497978",
+    "semantic_hash": "729af16a5c2d3b363807a5f77c497978"
+  },
+  "my_accountant/metro.config.js": {
+    "mtime": 1785684842.3177094,
+    "ast_hash": "dcb5d6305afce631e9df229a6693f679",
+    "semantic_hash": "dcb5d6305afce631e9df229a6693f679"
+  },
+  "my_accountant/nativewind-env.d.ts": {
+    "mtime": 1785684845.802044,
+    "ast_hash": "b02bcf4fde15f746f6e5248537d0b156",
+    "semantic_hash": "b02bcf4fde15f746f6e5248537d0b156"
+  },
+  "my_accountant/package.json": {
+    "mtime": 1786296195.0258963,
+    "ast_hash": "a5f70737479182252a12a0ad1d671c28",
+    "semantic_hash": "a5f70737479182252a12a0ad1d671c28"
+  },
+  "my_accountant/providers/auth-provider.tsx": {
+    "mtime": 1786295118.3050635,
+    "ast_hash": "5387960ff15dac95c85326e55493a548",
+    "semantic_hash": "5387960ff15dac95c85326e55493a548"
+  },
+  "my_accountant/scripts/reset-project.js": {
+    "mtime": 1785424428.3492181,
+    "ast_hash": "55e9a46ae7c35eb0340e956473beaed2",
+    "semantic_hash": "55e9a46ae7c35eb0340e956473beaed2"
+  },
+  "my_accountant/tailwind.config.js": {
+    "mtime": 1785684821.6557505,
+    "ast_hash": "314fb81fe108376687d00ac9f41154a3",
+    "semantic_hash": "314fb81fe108376687d00ac9f41154a3"
+  },
+  "my_accountant/tsconfig.json": {
+    "mtime": 1785685324.9978406,
+    "ast_hash": "3f8ad2303aa79fefe25fce0648a11f29",
+    "semantic_hash": "3f8ad2303aa79fefe25fce0648a11f29"
+  },
+  "CLAUDE.md": {
+    "mtime": 1788450546.832963,
+    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "semantic_hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "backend/README.md": {
+    "mtime": 1785480625.6710112,
+    "ast_hash": "bff17c83499610fd299abd0dc788abea",
+    "semantic_hash": "bff17c83499610fd299abd0dc788abea"
+  },
+  "docs/superpowers/plans/2026-08-25-flutter-foundation-and-auth.md": {
+    "mtime": 1787612079.4663858,
+    "ast_hash": "0bafdce67b7b93b447a81567eb23bc91",
+    "semantic_hash": "0bafdce67b7b93b447a81567eb23bc91"
+  },
+  "docs/superpowers/specs/2026-08-25-flutter-rewrite-design.md": {
+    "mtime": 1787611085.0024283,
+    "ast_hash": "02fcf22c97291d003f5634fc905de895",
+    "semantic_hash": "02fcf22c97291d003f5634fc905de895"
+  },
+  "my__accountant/README.md": {
+    "mtime": 1787610000.874825,
+    "ast_hash": "233da6fec42cebc24fe58d7e3f8f72c6",
+    "semantic_hash": "233da6fec42cebc24fe58d7e3f8f72c6"
+  },
+  "my__accountant/analysis_options.yaml": {
+    "mtime": 1787609998.286755,
+    "ast_hash": "63ab52176f8ec0284cbe7b191ecac9f1",
+    "semantic_hash": "63ab52176f8ec0284cbe7b191ecac9f1"
+  },
+  "my__accountant/linux/CMakeLists.txt": {
+    "mtime": 1787609999.7160208,
+    "ast_hash": "3a723817a8a323d531fcb81746a6d524",
+    "semantic_hash": "3a723817a8a323d531fcb81746a6d524"
+  },
+  "my__accountant/linux/flutter/CMakeLists.txt": {
+    "mtime": 1787140440.0,
+    "ast_hash": "2195470ce31675d31db5a37590d011f6",
+    "semantic_hash": "2195470ce31675d31db5a37590d011f6"
+  },
+  "my__accountant/linux/runner/CMakeLists.txt": {
+    "mtime": 1787140440.0,
+    "ast_hash": "30cc1614b16214b66c014af09ba699eb",
+    "semantic_hash": "30cc1614b16214b66c014af09ba699eb"
+  },
+  "my__accountant/pubspec.yaml": {
+    "mtime": 1787610000.8351772,
+    "ast_hash": "25434066c9f59b908184fec4926f1bc4",
+    "semantic_hash": "25434066c9f59b908184fec4926f1bc4"
+  },
+  "my__accountant/web/index.html": {
+    "mtime": 1787610001.5532901,
+    "ast_hash": "7cec03ca1fb0b0b48c00bfc41c38fa2c",
+    "semantic_hash": "7cec03ca1fb0b0b48c00bfc41c38fa2c"
+  },
+  "my__accountant/windows/CMakeLists.txt": {
+    "mtime": 1787610001.657285,
+    "ast_hash": "e905500fdd6e119eb6c4bdd187271211",
+    "semantic_hash": "e905500fdd6e119eb6c4bdd187271211"
+  },
+  "my__accountant/windows/flutter/CMakeLists.txt": {
+    "mtime": 1787140440.0,
+    "ast_hash": "bbf66fed5180bd9ae8198b8d7c4a0001",
+    "semantic_hash": "bbf66fed5180bd9ae8198b8d7c4a0001"
+  },
+  "my__accountant/windows/runner/CMakeLists.txt": {
+    "mtime": 1787140440.0,
+    "ast_hash": "028602ab9754bffe716659ada7590d29",
+    "semantic_hash": "028602ab9754bffe716659ada7590d29"
+  },
+  "my_accountant/AGENTS.md": {
+    "mtime": 1785424764.1127489,
+    "ast_hash": "fa597bde49bd54c3eca61137e60aa28a",
+    "semantic_hash": "fa597bde49bd54c3eca61137e60aa28a"
+  },
+  "my_accountant/CLAUDE.md": {
+    "mtime": 1785424764.1127489,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "my_accountant/README.md": {
+    "mtime": 1785424428.364827,
+    "ast_hash": "e22acbc85bc1f0b21dd2d4fbb55488b7",
+    "semantic_hash": "e22acbc85bc1f0b21dd2d4fbb55488b7"
+  },
+  "prompt copy.md": {
+    "mtime": 1785684059.343215,
+    "ast_hash": "c04f806e7dfea6b4412fd767ba5dd4cd",
+    "semantic_hash": "c04f806e7dfea6b4412fd767ba5dd4cd"
+  }
+}
